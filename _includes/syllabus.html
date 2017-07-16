@@ -17,8 +17,8 @@
   <tr>
     {% if multiday %}<td class="col-md-1"></td>{% endif %}
     <td class="{% if multiday %}col-md-1{% else %}col-md-2{% endif %}"></td>
-    <td class="col-md-3"><a href="{{ page.root }}/setup">Setup</a></td>
-    <td class="col-md-7">Download files required for the lesson</td>
+    <td class="col-md-4"><a href="{{ page.root }}/setup">Setup</a></td>
+    <td class="col-md-6">Download files required for the lesson</td>
   </tr>
   {% for episode in site.episodes %}
     {% if episode.start %} {% comment %} Starting a new day? {% endcomment %}
@@ -29,8 +29,8 @@
         <tr>
           {% if multiday %}<td class="col-md-1"></td>{% endif %}
           <td class="{% if multiday %}col-md-1{% else %}col-md-2{% endif %}">{% if hours < 10 %}0{% endif %}{{ hours }}:{% if minutes < 10 %}0{% endif %}{{ minutes }}</td>
-          <td class="col-md-3">Finish</td>
-          <td class="col-md-7"></td>
+          <td class="col-md-4">Finish</td>
+          <td class="col-md-6"></td>
         </tr>
       {% endif %}
       {% assign current = site.start_time %} {% comment %}Re-set start time of this episode to general daily start time {% endcomment %}
@@ -40,11 +40,11 @@
     <tr>
       {% if multiday %}<td class="col-md-1">{% if episode.start %}Day {{ day }}{% endif %}</td>{% endif %}
       <td class="{% if multiday %}col-md-1{% else %}col-md-2{% endif %}">{% if hours < 10 %}0{% endif %}{{ hours }}:{% if minutes < 10 %}0{% endif %}{{ minutes }}</td>
-      <td class="col-md-3">
+      <td class="col-md-4">
         {% assign lesson_number = lesson_number | plus: 1 %}
 	{{ lesson_number }}. <a href="{{ page.root }}{{ episode.url }}">{{ episode.title }}</a>
       </td>
-      <td class="col-md-7">
+      <td class="col-md-6">
         {% if episode.break %}
           Break
         {% else %}
@@ -66,8 +66,8 @@
   <tr>
     {% if multiday %}<td class="col-md-1"></td>{% endif %}
     <td class="{% if multiday %}col-md-1{% else %}col-md-2{% endif %}">{% if hours < 10 %}0{% endif %}{{ hours }}:{% if minutes < 10 %}0{% endif %}{{ minutes }}</td>
-    <td class="col-md-3">Finish</td>
-    <td class="col-md-7"></td>
+    <td class="col-md-4">Finish</td>
+    <td class="col-md-6"></td>
   </tr>
   </table>
 
