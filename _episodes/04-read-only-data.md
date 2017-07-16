@@ -3,11 +3,12 @@ title: "Principle #4: Treat data as read-only"
 teaching: 15
 exercises: 0
 questions:
-- "Key question"
+- "Why should I treat raw data as read-only?"
+- "What safeguards can I put in place for my raw data?"
 objectives:
-- "First objective."
+-
 keypoints:
-- "First key point."
+-
 ---
 
 

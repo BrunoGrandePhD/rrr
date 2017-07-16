@@ -3,11 +3,13 @@ title: "Principle #6: Document code and results"
 teaching: 30
 exercises: 0
 questions:
-- "Key question"
+- "Why should you document your code and results?"
+- "What is literate programming?"
+- "How can I use R Markdown and knitr to achieve literate programming in R?"
 objectives:
-- "First objective."
+-
 keypoints:
-- "First key point."
+-
 ---
 
 

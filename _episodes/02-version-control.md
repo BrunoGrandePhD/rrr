@@ -3,11 +3,13 @@ title: "Principle #2: Track your project history"
 teaching: 20
 exercises: 0
 questions:
-- "Key question"
+- "Why should you use version control for your project files?"
+- "Which files should be under version control?"
+- "How do you use version control with RStudio?"
 objectives:
-- "First objective."
+- 
 keypoints:
-- "First key point."
+- 
 ---
 
 

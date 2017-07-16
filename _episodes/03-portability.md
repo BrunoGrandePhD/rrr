@@ -3,11 +3,12 @@ title: "Principle #3: Be portable"
 teaching: 10
 exercises: 0
 questions:
-- "Key question"
+- "Why should your project files be portable?"
+- "How can you ensure portability with R?"
 objectives:
-- "First objective."
+- 
 keypoints:
-- "First key point."
+- 
 ---
 
 

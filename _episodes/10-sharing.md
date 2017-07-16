@@ -3,11 +3,13 @@ title: "Principle #10: Share openly and freely!"
 teaching: 15
 exercises: 0
 questions:
-- "Key question"
+- "Why should you share your data, code and results openly and freely?"
+- "How can you openly share your data?"
+- "How can I know if I can publish a freely accessible preprint?"
 objectives:
-- "First objective."
+-
 keypoints:
-- "First key point."
+-
 ---
 
 

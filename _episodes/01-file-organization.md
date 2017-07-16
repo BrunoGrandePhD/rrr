@@ -4,13 +4,12 @@ teaching: 15
 exercises: 0
 questions:
 - "Why should I organize my files?"
-- "Where should I put my files?"
-- "Which directory structure should I adopt for my project?"
-- "Which file naming conventions should I adopt"
+- "How should I structure my project folder?"
+- "How should I name my files?"
 objectives:
-- ""
+- 
 keypoints:
-- "First key point."
+- 
 ---
 
 

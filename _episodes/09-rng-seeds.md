@@ -3,11 +3,12 @@ title: "Principle #9: Be deterministic"
 teaching: 10
 exercises: 0
 questions:
-- "Key question"
+- "Why should you set a seed when you use a random number generator?"
+- "How can you set a seed in R?"
 objectives:
-- "First objective."
+-
 keypoints:
-- "First key point."
+-
 ---
 
 

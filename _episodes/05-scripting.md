@@ -3,11 +3,11 @@ title: "Principle #5: Store code in scripts"
 teaching: 20
 exercises: 0
 questions:
-- "Key question"
+- "Why should you **always** store code in scripts?"
 objectives:
-- "First objective."
+-
 keypoints:
-- "First key point."
+-
 ---
 
 

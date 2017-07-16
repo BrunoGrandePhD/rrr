@@ -3,11 +3,12 @@ title: "Principle #8: Modularize your analyses"
 teaching: 15
 exercises: 0
 questions:
-- "Key question"
+- "Why should you modularize your analyses?"
+- "How can you modularize your R or Rmd scripts?"
 objectives:
-- "First objective."
+-
 keypoints:
-- "First key point."
+-
 ---
 
 

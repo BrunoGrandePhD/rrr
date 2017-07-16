@@ -3,11 +3,13 @@ title: "Principle #7: Track software versions"
 teaching: 15
 exercises: 0
 questions:
-- "Key question"
+- "Why is it paramount to track software versions?"
+- "How can I easily track software versions in R?"
+- "How can I install and track software outside of R?"
 objectives:
-- "First objective."
+-
 keypoints:
-- "First key point."
+-
 ---
 
 
