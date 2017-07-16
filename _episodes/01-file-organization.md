@@ -48,12 +48,12 @@ keypoints:
 
 ## File naming
 
-<img src="../fig/file-names.png" class="plain" style="width:40%;">
+<img src="{{ page.root }}/fig/file-names.png" class="plain" style="width:40%;">
 
 
 ## ISO-8601
 
-<img src="../fig/iso-8601.png" class="plain" style="width:40%;">
+<img src="{{ page.root }}/fig/iso-8601.png" class="plain" style="width:40%;">
  
 
 ## Example

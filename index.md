@@ -40,8 +40,8 @@ RStudio, Git/GitHub, R Markdown/Notebooks, Conda/Bioconda, and open research.
 ### Reproducibility crisis
 
 <section>
-<img src="../fig/nosek-psych-title.png" style="width:40%;margin-right:30px;">
-<img src="../fig/nosek-cancer-title.png" style="width:40%;margin-left:30px;">
+<img src="{{ page.root }}/fig/nosek-psych-title.png" style="width:40%;margin-right:30px;">
+<img src="{{ page.root }}/fig/nosek-cancer-title.png" style="width:40%;margin-left:30px;">
 </section>
 
 
