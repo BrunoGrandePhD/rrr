@@ -1,6 +1,7 @@
 output_dir <- "docs/"
 
 unlink(output_dir, recursive = TRUE)
+unlink("lesson.html")
 
 dir.create(output_dir)
 

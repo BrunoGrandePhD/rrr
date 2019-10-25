@@ -7,10 +7,11 @@ output:
   revealjs::revealjs_presentation:
     theme: "simple"
     transition: "none"
-    css: "assets/css/style.css"
+    css: "assets/css/slides.css"
     reveal_options:
       controls: FALSE
-  html_document: default
+  html_document:
+    css: "assets/css/webpage.css"
 ---
 
 # Installation Instructions
