@@ -1896,8 +1896,8 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li>Using same approach and <strong>same data</strong></li>
 </ul></li>
 </ul>
-</section><section id="reproducibility" class="slide level2">
-<h2>Reproducibility</h2>
+</section><section id="what-is-reproducibility-1" class="slide level2 center">
+<h2>What is reproducibility?</h2>
 <blockquote>
 <p>An attainable minimum standard for assessing the value of scientific claims.</p>
 <p>– Sandve <em>et al.</em>, 2013</p>
@@ -1915,15 +1915,17 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li><strong>Best:</strong> Did you detail which software was used, including versions?</li>
 </ul></li>
 </ul>
+</section><section id="section" class="slide level2 center">
+<h2></h2>
 <blockquote>
-<p>As computational researcher, we can rely on the fact that computers are very good at following instructions.</p>
+<p>As computational researchers, we can rely on the fact that computers are very good at following instructions.</p>
 </blockquote>
 </section><section id="why-are-we-facing-this-crisis" class="slide level2">
 <h2>Why are we facing this crisis?</h2>
 <ul>
 <li>Reproducibility isn’t taught to researchers</li>
 <li>Little incentive to spend time on this due to publish or perish model</li>
-<li><strong>This is changing:</strong> Funding agencies are catching on to the problem</li>
+<li><strong>Now:</strong> Funding agencies are catching on to the problem</li>
 <li>They are starting to require:
 <ul>
 <li>Open data (<em>e.g.</em> data management plans)</li>
@@ -1942,6 +1944,8 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li>New or updated data and/or methods</li>
 </ul></li>
 </ul>
+</section><section id="section-1" class="slide level2 center">
+<h2></h2>
 <blockquote>
 <p>Your primary collaborator is yourself 6 months from now, and your past self doesn’t answer emails.</p>
 </blockquote>
@@ -1954,7 +1958,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <ul>
 <li>Age, sex, calcium levels, etc.</li>
 </ul></li>
-<li>Outcome: Whether the patient has atherosclerotic heart disease (AHD)</li>
+<li>Outcome: Whether the patient has heart disease</li>
 </ul></li>
 <li>Objective
 <ul>
@@ -2002,12 +2006,11 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li>Context of data collection (goals, hypotheses)</li>
 <li>Data collection methods</li>
 <li>Structure of files</li>
-<li>Sources used</li>
 <li>Quality assurance (data validation, checking)</li>
 <li>Data modifications</li>
 <li>Confidentiality and permissions</li>
 <li>Names of labels and variables</li>
-<li>Explanations of codes and classifications</li>
+<li>Explanations of codes and abbreviations</li>
 </ul>
 </section><section id="naming-data-files" class="slide level2">
 <h2>Naming data files</h2>
@@ -2095,6 +2098,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li>Git is popular because of GitHub</li>
 <li>Git integrates nicely with RStudio</li>
 <li>Alternatively, you can maintain copies of your scripts</li>
+<li>Look into SFU Vault</li>
 </ul>
 </section><section id="how-can-you-track-your-project-history" class="slide level2">
 <h2>How can you track your project history?</h2>
@@ -2156,7 +2160,6 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li>Ideally, automate changes with a script</li>
 <li>Otherwise, make a copy and note what changes you made and why</li>
 </ul></li>
-<li>Store data in an open, non-proprietary file format</li>
 </ul>
 </section><section id="example" class="slide level2">
 <h2>Example</h2>
@@ -2181,15 +2184,10 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li>Move raw data (<code>Heart.csv</code>) into <code>data/raw_data</code></li>
 <li>Set files as read-only
 <ul>
-<li>In R: <code>Sys.chmod(&quot;data/raw_data/Heart.csv&quot;, &quot;555&quot;)</code></li>
+<li><code>Sys.chmod(&quot;data/raw_data/Heart.csv&quot;, &quot;555&quot;)</code></li>
 </ul></li>
 <li>Attempt to edit the <code>Heart.csv</code> raw data file</li>
-<li>Write R script to fix dataset
-<ul>
-<li>Inconsistent capitalization</li>
-</ul></li>
-<li>Ignore <code>clean_data</code> folder in <code>.gitignore</code></li>
-<li>Update Git repository</li>
+<li>Write R script to fix dataset (NA values)</li>
 </ul>
 </section></section>
 <section><section id="principle-5-store-code-in-scripts" class="title-slide slide level1"><h1>Principle #5: Store code in scripts</h1></section><section id="why-should-you-store-code-in-scripts" class="slide level2">
@@ -2234,7 +2232,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li>Train random forest model</li>
 <li>Save fit and plot results</li>
 </ul></li>
-<li>Adopt a consistent coding style= -
+<li>Adopt a consistent coding style
 <ul>
 <li><a href="http://adv-r.had.co.nz/Style.html">Hadley Wickam’s style guide</a></li>
 </ul></li>
@@ -2266,7 +2264,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li>Code and textual annotations are intertwined</li>
 <li>You explain with text what you’re doing in code and more importantly, why you are doing it</li>
 <li>You also interpret results (<em>e.g.</em> figures) as they’re generated</li>
-<li>One method: R Markdown</li>
+<li>Options: R Markdown, Jupyter Notebooks</li>
 </ul>
 </section><section id="what-is-r-markdown" class="slide level2">
 <h2>What is R Markdown?</h2>
@@ -2300,7 +2298,6 @@ document.getElementsByTagName('head')[0].appendChild(style);
 </ul>
 </section><section id="case-in-point" class="slide level2">
 <h2>Case in point</h2>
-<p>Run the following code in your R console:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">library</span>(dplyr)</a>
 <a class="sourceLine" id="cb3-2" title="2"></a>
 <a class="sourceLine" id="cb3-3" title="3">by_species &lt;-<span class="st"> </span><span class="kw">group_by</span>(iris, Species)</a>
@@ -2310,6 +2307,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <a class="sourceLine" id="cb3-7" title="7"><span class="co"># Shortest petal length among setosa flowers</span></a>
 <a class="sourceLine" id="cb3-8" title="8">by_sepal_width[[<span class="dv">1</span>, <span class="st">&quot;Petal.Length&quot;</span>]]</a></code></pre></div>
 <ul>
+<li class="fragment">My output: <code>[1] 1.3</code></li>
 <li class="fragment">Major dplyr change after version 0.4.3</li>
 </ul>
 </section><section id="how-can-youn-track-software-versions" class="slide level2">
@@ -2335,8 +2333,6 @@ document.getElementsByTagName('head')[0].appendChild(style);
 </ul></li>
 <li>Introduce the Conda package manager and the Bioconda recipes
 <ul>
-<li>Generate a <code>requirements.txt</code> file</li>
-<li>Create a new environment from that <code>requirements.txt</code> file</li>
 <li>I do <strong>not</strong> recommend using Conda for R</li>
 </ul></li>
 </ul>
@@ -2405,10 +2401,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li>Here, only <code>train.Rmd</code> relies on a RNG</li>
 <li>Use the <code>set.seed()</code> function</li>
 </ul></li>
-<li>Compare error rates again
-<ul>
-<li>They should be the same now</li>
-</ul></li>
+<li>Compare error rates again</li>
 </ul>
 </section></section>
 <section><section id="principle-10-share-openly-and-freely" class="title-slide slide level1"><h1>Principle #10: Share openly and freely!</h1></section><section id="why-should-you-share-openly-and-freely" class="slide level2">
@@ -2425,7 +2418,10 @@ document.getElementsByTagName('head')[0].appendChild(style);
 </section><section id="how-can-you-share-more-openly-and-freely" class="slide level2">
 <h2>How can you share more openly and freely?</h2>
 <ul>
-<li>Share data, code and results</li>
+<li>Share data, code and results
+<ul>
+<li>Store data in an open, non-proprietary file format</li>
+</ul></li>
 <li>Use reputable repositories that can mint DOIs
 <ul>
 <li>Figshare, Dryad, Zenodo</li>
@@ -2466,58 +2462,55 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <section><section id="extra-stuff" class="title-slide slide level1"><h1>Extra Stuff</h1></section><section id="r-code-for-lesson" class="slide level2">
 <h2>R code for lesson</h2>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="co"># Tidy ---------------------------------------------------</span></a>
-<a class="sourceLine" id="cb4-2" title="2"></a>
-<a class="sourceLine" id="cb4-3" title="3"><span class="kw">library</span>(here)</a>
-<a class="sourceLine" id="cb4-4" title="4"><span class="kw">library</span>(tidyr)</a>
-<a class="sourceLine" id="cb4-5" title="5"></a>
-<a class="sourceLine" id="cb4-6" title="6">heart_raw_file &lt;-<span class="st"> </span><span class="kw">here</span>(<span class="st">&quot;data/raw_data/Heart.csv&quot;</span>)</a>
-<a class="sourceLine" id="cb4-7" title="7">heart_raw &lt;-<span class="st"> </span><span class="kw">read.csv</span>(heart_raw_file)</a>
-<a class="sourceLine" id="cb4-8" title="8"></a>
-<a class="sourceLine" id="cb4-9" title="9">heart_clean &lt;-<span class="st"> </span><span class="kw">drop_na</span>(heart_raw)</a>
-<a class="sourceLine" id="cb4-10" title="10"></a>
-<a class="sourceLine" id="cb4-11" title="11">heart_clean_file &lt;-<span class="st"> </span><span class="kw">here</span>(<span class="st">&quot;data/clean_data/Heart.csv&quot;</span>)</a>
-<a class="sourceLine" id="cb4-12" title="12"><span class="kw">write.csv</span>(heart_clean, heart_clean_file)</a>
-<a class="sourceLine" id="cb4-13" title="13"></a>
-<a class="sourceLine" id="cb4-14" title="14"><span class="kw">sessionInfo</span>()</a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="kw">library</span>(here)</a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="kw">library</span>(tidyr)</a>
+<a class="sourceLine" id="cb4-4" title="4"></a>
+<a class="sourceLine" id="cb4-5" title="5">heart_raw_file &lt;-<span class="st"> </span><span class="kw">here</span>(<span class="st">&quot;data/raw_data/Heart.csv&quot;</span>)</a>
+<a class="sourceLine" id="cb4-6" title="6">heart_raw &lt;-<span class="st"> </span><span class="kw">read.csv</span>(heart_raw_file)</a>
+<a class="sourceLine" id="cb4-7" title="7"></a>
+<a class="sourceLine" id="cb4-8" title="8">heart_clean &lt;-<span class="st"> </span><span class="kw">drop_na</span>(heart_raw)</a>
+<a class="sourceLine" id="cb4-9" title="9"></a>
+<a class="sourceLine" id="cb4-10" title="10">heart_clean_file &lt;-<span class="st"> </span><span class="kw">here</span>(<span class="st">&quot;data/clean_data/Heart.csv&quot;</span>)</a>
+<a class="sourceLine" id="cb4-11" title="11"><span class="kw">write.csv</span>(heart_clean, heart_clean_file)</a>
+<a class="sourceLine" id="cb4-12" title="12"></a>
+<a class="sourceLine" id="cb4-13" title="13"><span class="kw">sessionInfo</span>()</a>
+<a class="sourceLine" id="cb4-14" title="14"></a>
 <a class="sourceLine" id="cb4-15" title="15"></a>
-<a class="sourceLine" id="cb4-16" title="16"></a>
-<a class="sourceLine" id="cb4-17" title="17"><span class="co"># Train --------------------------------------------------</span></a>
-<a class="sourceLine" id="cb4-18" title="18"></a>
-<a class="sourceLine" id="cb4-19" title="19"><span class="kw">library</span>(here)</a>
-<a class="sourceLine" id="cb4-20" title="20"><span class="kw">library</span>(randomForest)</a>
-<a class="sourceLine" id="cb4-21" title="21"></a>
-<a class="sourceLine" id="cb4-22" title="22">heart_clean_file &lt;-<span class="st"> </span><span class="kw">here</span>(<span class="st">&quot;data/clean_data/Heart.csv&quot;</span>)</a>
-<a class="sourceLine" id="cb4-23" title="23">heart_clean &lt;-<span class="st"> </span><span class="kw">read.csv</span>(heart_clean_file)</a>
-<a class="sourceLine" id="cb4-24" title="24"></a>
-<a class="sourceLine" id="cb4-25" title="25">rf_model &lt;-<span class="st"> </span><span class="kw">randomForest</span>(AHD <span class="op">~</span><span class="st"> </span>., heart_clean, </a>
-<a class="sourceLine" id="cb4-26" title="26">                         <span class="dt">importance =</span> <span class="ot">TRUE</span>, </a>
-<a class="sourceLine" id="cb4-27" title="27">                         <span class="dt">keep.forest =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb4-28" title="28"></a>
-<a class="sourceLine" id="cb4-29" title="29">rf_model_file &lt;-<span class="st"> </span><span class="kw">here</span>(<span class="st">&quot;results/random_forest_model.rds&quot;</span>)</a>
-<a class="sourceLine" id="cb4-30" title="30"><span class="kw">saveRDS</span>(rf_model, rf_model_file)</a>
+<a class="sourceLine" id="cb4-16" title="16"><span class="co"># Train --------------------------------------------------</span></a>
+<a class="sourceLine" id="cb4-17" title="17"><span class="kw">library</span>(here)</a>
+<a class="sourceLine" id="cb4-18" title="18"><span class="kw">library</span>(randomForest)</a>
+<a class="sourceLine" id="cb4-19" title="19"></a>
+<a class="sourceLine" id="cb4-20" title="20">heart_clean_file &lt;-<span class="st"> </span><span class="kw">here</span>(<span class="st">&quot;data/clean_data/Heart.csv&quot;</span>)</a>
+<a class="sourceLine" id="cb4-21" title="21">heart_clean &lt;-<span class="st"> </span><span class="kw">read.csv</span>(heart_clean_file)</a>
+<a class="sourceLine" id="cb4-22" title="22"></a>
+<a class="sourceLine" id="cb4-23" title="23">rf_model &lt;-<span class="st"> </span><span class="kw">randomForest</span>(AHD <span class="op">~</span><span class="st"> </span>., heart_clean, </a>
+<a class="sourceLine" id="cb4-24" title="24">                         <span class="dt">importance =</span> <span class="ot">TRUE</span>, </a>
+<a class="sourceLine" id="cb4-25" title="25">                         <span class="dt">keep.forest =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb4-26" title="26"></a>
+<a class="sourceLine" id="cb4-27" title="27">rf_model_file &lt;-<span class="st"> </span><span class="kw">here</span>(<span class="st">&quot;results/random_forest_model.rds&quot;</span>)</a>
+<a class="sourceLine" id="cb4-28" title="28"><span class="kw">saveRDS</span>(rf_model, rf_model_file)</a>
+<a class="sourceLine" id="cb4-29" title="29"></a>
+<a class="sourceLine" id="cb4-30" title="30"><span class="kw">sessionInfo</span>()</a>
 <a class="sourceLine" id="cb4-31" title="31"></a>
-<a class="sourceLine" id="cb4-32" title="32"><span class="kw">sessionInfo</span>()</a>
-<a class="sourceLine" id="cb4-33" title="33"></a>
-<a class="sourceLine" id="cb4-34" title="34"></a>
-<a class="sourceLine" id="cb4-35" title="35"><span class="co"># Plot ---------------------------------------------------</span></a>
-<a class="sourceLine" id="cb4-36" title="36"></a>
-<a class="sourceLine" id="cb4-37" title="37"><span class="kw">library</span>(randomForest)</a>
+<a class="sourceLine" id="cb4-32" title="32"></a>
+<a class="sourceLine" id="cb4-33" title="33"><span class="co"># Plot ---------------------------------------------------</span></a>
+<a class="sourceLine" id="cb4-34" title="34"><span class="kw">library</span>(randomForest)</a>
+<a class="sourceLine" id="cb4-35" title="35"></a>
+<a class="sourceLine" id="cb4-36" title="36">rf_model_file &lt;-<span class="st"> </span><span class="kw">here</span>(<span class="st">&quot;results/random_forest_fit.rds&quot;</span>)</a>
+<a class="sourceLine" id="cb4-37" title="37">rf_model &lt;-<span class="st"> </span><span class="kw">readRDS</span>(rf_model_file)</a>
 <a class="sourceLine" id="cb4-38" title="38"></a>
-<a class="sourceLine" id="cb4-39" title="39">rf_model_file &lt;-<span class="st"> </span><span class="kw">here</span>(<span class="st">&quot;results/random_forest_fit.rds&quot;</span>)</a>
-<a class="sourceLine" id="cb4-40" title="40">rf_model &lt;-<span class="st"> </span><span class="kw">readRDS</span>(rf_model_file)</a>
+<a class="sourceLine" id="cb4-39" title="39">heart_clean_file &lt;-<span class="st"> </span><span class="kw">here</span>(<span class="st">&quot;data/clean_data/Heart.csv&quot;</span>)</a>
+<a class="sourceLine" id="cb4-40" title="40">heart_clean &lt;-<span class="st"> </span><span class="kw">read.csv</span>(heart_clean_file)</a>
 <a class="sourceLine" id="cb4-41" title="41"></a>
-<a class="sourceLine" id="cb4-42" title="42">heart_clean_file &lt;-<span class="st"> </span><span class="kw">here</span>(<span class="st">&quot;data/clean_data/Heart.csv&quot;</span>)</a>
-<a class="sourceLine" id="cb4-43" title="43">heart_clean &lt;-<span class="st"> </span><span class="kw">read.csv</span>(heart_clean_file)</a>
-<a class="sourceLine" id="cb4-44" title="44"></a>
-<a class="sourceLine" id="cb4-45" title="45"><span class="kw">print</span>(rf_model)</a>
-<a class="sourceLine" id="cb4-46" title="46"></a>
-<a class="sourceLine" id="cb4-47" title="47"><span class="kw">plot</span>(rf_model)</a>
-<a class="sourceLine" id="cb4-48" title="48"></a>
-<a class="sourceLine" id="cb4-49" title="49"><span class="kw">varImpPlot</span>(rf_model)</a>
-<a class="sourceLine" id="cb4-50" title="50"></a>
-<a class="sourceLine" id="cb4-51" title="51"><span class="kw">partialPlot</span>(rf_model, heart_clean, <span class="st">&quot;Ca&quot;</span>)</a>
-<a class="sourceLine" id="cb4-52" title="52"></a>
-<a class="sourceLine" id="cb4-53" title="53"><span class="kw">sessionInfo</span>()</a></code></pre></div>
+<a class="sourceLine" id="cb4-42" title="42"><span class="kw">print</span>(rf_model)</a>
+<a class="sourceLine" id="cb4-43" title="43"></a>
+<a class="sourceLine" id="cb4-44" title="44"><span class="kw">plot</span>(rf_model)</a>
+<a class="sourceLine" id="cb4-45" title="45"></a>
+<a class="sourceLine" id="cb4-46" title="46"><span class="kw">varImpPlot</span>(rf_model)</a>
+<a class="sourceLine" id="cb4-47" title="47"></a>
+<a class="sourceLine" id="cb4-48" title="48"><span class="kw">partialPlot</span>(rf_model, heart_clean, <span class="st">&quot;Ca&quot;</span>)</a>
+<a class="sourceLine" id="cb4-49" title="49"></a>
+<a class="sourceLine" id="cb4-50" title="50"><span class="kw">sessionInfo</span>()</a></code></pre></div>
 </section></section>
     </div>
   </div>

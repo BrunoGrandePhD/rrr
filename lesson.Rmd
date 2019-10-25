@@ -35,7 +35,7 @@ output:
 * Reproducing a result
     * Using same approach and **same data**
 
-## Reproducibility
+## What is reproducibility? {.center}
 
 > An attainable minimum standard for assessing the value of scientific claims.
 >
@@ -53,14 +53,16 @@ output:
     * **Better:** Is the code available?
     * **Best:** Did you detail which software was used, including versions?
 
-> As computational researcher, we can rely on the fact that 
+## {.center}
+
+> As computational researchers, we can rely on the fact that 
 > computers are very good at following instructions.
 
 ## Why are we facing this crisis?
 
 * Reproducibility isn't taught to researchers
 * Little incentive to spend time on this due to publish or perish model
-* **This is changing:** Funding agencies are catching on to the problem
+* **Now:** Funding agencies are catching on to the problem
 * They are starting to require:
     * Open data (_e.g._ data management plans)
     * Open access publications
@@ -74,6 +76,8 @@ output:
     * Realizing a mistake
     * New or updated data and/or methods
 
+## {.center}
+
 > Your primary collaborator is yourself 6 months from now, and your past self
 > doesn’t answer emails.
 
@@ -85,7 +89,7 @@ output:
     * 303 patients show up at clinic with chest pain
     * Clinical data for 13 variables
         * Age, sex, calcium levels, etc.
-    * Outcome: Whether the patient has atherosclerotic heart disease (AHD)
+    * Outcome: Whether the patient has heart disease
 * Objective
     * Predict whether a patient has heart disease using the clinical data
 
@@ -130,12 +134,11 @@ output:
 * Context of data collection (goals, hypotheses)
 * Data collection methods
 * Structure of files
-* Sources used
 * Quality assurance (data validation, checking)
 * Data modifications
 * Confidentiality and permissions
 * Names of labels and variables
-* Explanations of codes and classifications
+* Explanations of codes and abbreviations
 
 ## Naming data files
 
@@ -222,6 +225,7 @@ output:
 * Git is popular because of GitHub
 * Git integrates nicely with RStudio
 * Alternatively, you can maintain copies of your scripts
+* Look into SFU Vault
 
 ## How can you track your project history?
 
@@ -272,7 +276,6 @@ output:
 * Avoid manual changes
   * Ideally, automate changes with a script
   * Otherwise, make a copy and note what changes you made and why
-* Store data in an open, non-proprietary file format
 
 ## Example
 
@@ -299,12 +302,9 @@ output:
 * Split `data` folder into `data/raw_data` and `data/clean_data`
 * Move raw data (`Heart.csv`) into `data/raw_data`
 * Set files as read-only
-  * In R: `Sys.chmod("data/raw_data/Heart.csv", "555")`
+    * `Sys.chmod("data/raw_data/Heart.csv", "555")`
 * Attempt to edit the `Heart.csv` raw data file
-* Write R script to fix dataset
-    * Inconsistent capitalization
-* Ignore `clean_data` folder in `.gitignore`
-* Update Git repository
+* Write R script to fix dataset (NA values)
 
 
 
@@ -341,7 +341,7 @@ output:
 * Expand `analysis.R`
     * Train random forest model
     * Save fit and plot results
-* Adopt a consistent coding style= -
+* Adopt a consistent coding style
     * [Hadley Wickam's style guide](http://adv-r.had.co.nz/Style.html)
 
 
@@ -370,7 +370,7 @@ output:
 * You explain with text what you're doing in code and more importantly,
   why you are doing it
 * You also interpret results (_e.g._ figures) as they're generated
-* One method: R Markdown
+* Options: R Markdown, Jupyter Notebooks
 
 ## What is R Markdown?
 
@@ -401,8 +401,6 @@ output:
 
 ## Case in point
 
-Run the following code in your R console:
-
 ```r
 library(dplyr)
 
@@ -413,6 +411,7 @@ by_sepal_width  <- arrange(by_species, Sepal.Width)
 # Shortest petal length among setosa flowers
 by_sepal_width[[1, "Petal.Length"]]
 ```
+> - My output: `[1] 1.3`
 > - Major dplyr change after version 0.4.3
 
 ## How can youn track software versions?
@@ -430,8 +429,6 @@ by_sepal_width[[1, "Petal.Length"]]
 * Add `sessionInfo()` at the end of the R Markdown file
     * Alternatively, you can use `sessioninfo::session_info()`
 * Introduce the Conda package manager and the Bioconda recipes
-    * Generate a `requirements.txt` file
-    * Create a new environment from that `requirements.txt` file
     * I do **not** recommend using Conda for R
 
 
@@ -491,7 +488,6 @@ by_sepal_width[[1, "Petal.Length"]]
     * Here, only `train.Rmd` relies on a RNG
     * Use the `set.seed()` function
 * Compare error rates again
-    * They should be the same now
 
 
 
@@ -511,6 +507,7 @@ by_sepal_width[[1, "Petal.Length"]]
 ## How can you share more openly and freely?
 
 * Share data, code and results
+    * Store data in an open, non-proprietary file format
 * Use reputable repositories that can mint DOIs
     * Figshare, Dryad, Zenodo
 * Include any metadata expected by your research community
@@ -554,7 +551,6 @@ The `Heart-csv` dataset used in this presentation was taken from "An Introductio
 
 ```r
 # Tidy ---------------------------------------------------
-
 library(here)
 library(tidyr)
 
@@ -570,7 +566,6 @@ sessionInfo()
 
 
 # Train --------------------------------------------------
-
 library(here)
 library(randomForest)
 
@@ -588,7 +583,6 @@ sessionInfo()
 
 
 # Plot ---------------------------------------------------
-
 library(randomForest)
 
 rf_model_file <- here("results/random_forest_fit.rds")

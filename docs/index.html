@@ -401,8 +401,8 @@ summary {
 </ul></li>
 </ul>
 </div>
-<div id="reproducibility" class="section level2">
-<h2>Reproducibility</h2>
+<div id="what-is-reproducibility-1" class="section level2 center">
+<h2>What is reproducibility?</h2>
 <blockquote>
 <p>An attainable minimum standard for assessing the value of scientific claims.</p>
 <p>– Sandve <em>et al.</em>, 2013</p>
@@ -422,8 +422,11 @@ summary {
 <li><strong>Best:</strong> Did you detail which software was used, including versions?</li>
 </ul></li>
 </ul>
+</div>
+<div id="section" class="section level2 center">
+<h2></h2>
 <blockquote>
-<p>As computational researcher, we can rely on the fact that computers are very good at following instructions.</p>
+<p>As computational researchers, we can rely on the fact that computers are very good at following instructions.</p>
 </blockquote>
 </div>
 <div id="why-are-we-facing-this-crisis" class="section level2">
@@ -431,7 +434,7 @@ summary {
 <ul>
 <li>Reproducibility isn’t taught to researchers</li>
 <li>Little incentive to spend time on this due to publish or perish model</li>
-<li><strong>This is changing:</strong> Funding agencies are catching on to the problem</li>
+<li><strong>Now:</strong> Funding agencies are catching on to the problem</li>
 <li>They are starting to require:
 <ul>
 <li>Open data (<em>e.g.</em> data management plans)</li>
@@ -451,6 +454,9 @@ summary {
 <li>New or updated data and/or methods</li>
 </ul></li>
 </ul>
+</div>
+<div id="section-1" class="section level2 center">
+<h2></h2>
 <blockquote>
 <p>Your primary collaborator is yourself 6 months from now, and your past self doesn’t answer emails.</p>
 </blockquote>
@@ -466,7 +472,7 @@ summary {
 <ul>
 <li>Age, sex, calcium levels, etc.</li>
 </ul></li>
-<li>Outcome: Whether the patient has atherosclerotic heart disease (AHD)</li>
+<li>Outcome: Whether the patient has heart disease</li>
 </ul></li>
 <li>Objective
 <ul>
@@ -521,12 +527,11 @@ summary {
 <li>Context of data collection (goals, hypotheses)</li>
 <li>Data collection methods</li>
 <li>Structure of files</li>
-<li>Sources used</li>
 <li>Quality assurance (data validation, checking)</li>
 <li>Data modifications</li>
 <li>Confidentiality and permissions</li>
 <li>Names of labels and variables</li>
-<li>Explanations of codes and classifications</li>
+<li>Explanations of codes and abbreviations</li>
 </ul>
 </div>
 <div id="naming-data-files" class="section level2">
@@ -627,6 +632,7 @@ summary {
 <li>Git is popular because of GitHub</li>
 <li>Git integrates nicely with RStudio</li>
 <li>Alternatively, you can maintain copies of your scripts</li>
+<li>Look into SFU Vault</li>
 </ul>
 </div>
 <div id="how-can-you-track-your-project-history" class="section level2">
@@ -695,7 +701,6 @@ summary {
 <li>Ideally, automate changes with a script</li>
 <li>Otherwise, make a copy and note what changes you made and why</li>
 </ul></li>
-<li>Store data in an open, non-proprietary file format</li>
 </ul>
 </div>
 <div id="example" class="section level2">
@@ -722,15 +727,10 @@ summary {
 <li>Move raw data (<code>Heart.csv</code>) into <code>data/raw_data</code></li>
 <li>Set files as read-only
 <ul>
-<li>In R: <code>Sys.chmod(&quot;data/raw_data/Heart.csv&quot;, &quot;555&quot;)</code></li>
+<li><code>Sys.chmod(&quot;data/raw_data/Heart.csv&quot;, &quot;555&quot;)</code></li>
 </ul></li>
 <li>Attempt to edit the <code>Heart.csv</code> raw data file</li>
-<li>Write R script to fix dataset
-<ul>
-<li>Inconsistent capitalization</li>
-</ul></li>
-<li>Ignore <code>clean_data</code> folder in <code>.gitignore</code></li>
-<li>Update Git repository</li>
+<li>Write R script to fix dataset (NA values)</li>
 </ul>
 </div>
 </div>
@@ -781,7 +781,7 @@ summary {
 <li>Train random forest model</li>
 <li>Save fit and plot results</li>
 </ul></li>
-<li>Adopt a consistent coding style= -
+<li>Adopt a consistent coding style
 <ul>
 <li><a href="http://adv-r.had.co.nz/Style.html">Hadley Wickam’s style guide</a></li>
 </ul></li>
@@ -818,7 +818,7 @@ summary {
 <li>Code and textual annotations are intertwined</li>
 <li>You explain with text what you’re doing in code and more importantly, why you are doing it</li>
 <li>You also interpret results (<em>e.g.</em> figures) as they’re generated</li>
-<li>One method: R Markdown</li>
+<li>Options: R Markdown, Jupyter Notebooks</li>
 </ul>
 </div>
 <div id="what-is-r-markdown" class="section level2">
@@ -858,7 +858,6 @@ summary {
 </div>
 <div id="case-in-point" class="section level2">
 <h2>Case in point</h2>
-<p>Run the following code in your R console:</p>
 <pre class="r"><code>library(dplyr)
 
 by_species &lt;- group_by(iris, Species)
@@ -869,6 +868,7 @@ by_sepal_width  &lt;- arrange(by_species, Sepal.Width)
 by_sepal_width[[1, &quot;Petal.Length&quot;]]</code></pre>
 <blockquote>
 <ul>
+<li>My output: <code>[1] 1.3</code></li>
 <li>Major dplyr change after version 0.4.3</li>
 </ul>
 </blockquote>
@@ -897,8 +897,6 @@ by_sepal_width[[1, &quot;Petal.Length&quot;]]</code></pre>
 </ul></li>
 <li>Introduce the Conda package manager and the Bioconda recipes
 <ul>
-<li>Generate a <code>requirements.txt</code> file</li>
-<li>Create a new environment from that <code>requirements.txt</code> file</li>
 <li>I do <strong>not</strong> recommend using Conda for R</li>
 </ul></li>
 </ul>
@@ -977,10 +975,7 @@ by_sepal_width[[1, &quot;Petal.Length&quot;]]</code></pre>
 <li>Here, only <code>train.Rmd</code> relies on a RNG</li>
 <li>Use the <code>set.seed()</code> function</li>
 </ul></li>
-<li>Compare error rates again
-<ul>
-<li>They should be the same now</li>
-</ul></li>
+<li>Compare error rates again</li>
 </ul>
 </div>
 </div>
@@ -1001,7 +996,10 @@ by_sepal_width[[1, &quot;Petal.Length&quot;]]</code></pre>
 <div id="how-can-you-share-more-openly-and-freely" class="section level2">
 <h2>How can you share more openly and freely?</h2>
 <ul>
-<li>Share data, code and results</li>
+<li>Share data, code and results
+<ul>
+<li>Store data in an open, non-proprietary file format</li>
+</ul></li>
 <li>Use reputable repositories that can mint DOIs
 <ul>
 <li>Figshare, Dryad, Zenodo</li>
@@ -1050,7 +1048,6 @@ by_sepal_width[[1, &quot;Petal.Length&quot;]]</code></pre>
 <div id="r-code-for-lesson" class="section level2">
 <h2>R code for lesson</h2>
 <pre class="r"><code># Tidy ---------------------------------------------------
-
 library(here)
 library(tidyr)
 
@@ -1066,7 +1063,6 @@ sessionInfo()
 
 
 # Train --------------------------------------------------
-
 library(here)
 library(randomForest)
 
@@ -1084,7 +1080,6 @@ sessionInfo()
 
 
 # Plot ---------------------------------------------------
-
 library(randomForest)
 
 rf_model_file &lt;- here(&quot;results/random_forest_fit.rds&quot;)
